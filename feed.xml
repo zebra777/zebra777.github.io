@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2020-10-26T09:51:30+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zebra Blog</title><subtitle>'This is a Blog about #CTFs, #WriteUps, #Pen-Testing and #Programming.'</subtitle><author><name>{&quot;social&quot;=&gt;{&quot;github&quot;=&gt;&quot;zebra777&quot;}}</name></author><entry><title type="html">writeup</title><link href="http://localhost:4000/writeup/info" rel="alternate" type="text/html" title="writeup" /><published>2020-10-21T13:12:00+02:00</published><updated>2020-10-21T13:12:00+02:00</updated><id>http://localhost:4000/writeup/writeup</id><content type="html" xml:base="http://localhost:4000/writeup/info"></content><author><name>{&quot;social&quot;=&gt;{&quot;github&quot;=&gt;&quot;zebra777&quot;}}</name></author><category term="writeup" /><category term="info" /><summary type="html"></summary></entry><entry><title type="html">EasyPeasy on Tryhackme</title><link href="http://localhost:4000/writeup/thm" rel="alternate" type="text/html" title="EasyPeasy on Tryhackme" /><published>2020-10-21T13:12:00+02:00</published><updated>2020-10-21T13:12:00+02:00</updated><id>http://localhost:4000/writeup/zebratest</id><content type="html" xml:base="http://localhost:4000/writeup/thm">&lt;p&gt;&lt;img src=&quot;/images/easypeasy.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://tryhackme.com/room/easypeasyctf&quot;&gt;THM EasyPeasy Link&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;easypeasy-writeup&quot;&gt;EasyPeasy WriteUp&lt;/h1&gt;
+&lt;h2 id=&quot;by-zebra&quot;&gt;by Zebra&lt;/h2&gt;
+
+&lt;blockquote&gt;
+
+  &lt;p&gt;*Platorform: Tryhackme &lt;br /&gt;
+*Difficulty: Easy&lt;br /&gt;
+*OS		  :  Linux&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;under-construction&quot;&gt;&lt;strong&gt;&lt;em&gt;Under Construction!!!&lt;/em&gt;&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;h3 id=&quot;preparation-steps&quot;&gt;&lt;ins&gt;Preparation Steps&lt;/ins&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+
+  &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;EasyPeasy &lt;span class=&quot;c&quot;&gt;#New Room folder&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;EasyPeasy   	&lt;span class=&quot;c&quot;&gt;#Move into folder&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;nmap  	&lt;span class=&quot;c&quot;&gt;#Nmap directory&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;gobuster  &lt;span class=&quot;c&quot;&gt;#Gobuser directory&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;scanning-and-enumeration&quot;&gt;&lt;ins&gt;Scanning and Enumeration&lt;/ins&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;#Portscanning by Rustscan&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+  &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rustscan &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; 500 &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; 1500 10.10.144.140 &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;tee&lt;/span&gt; ./nmap/rust_initial.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;#Open Ports&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+
+  &lt;p&gt;80/tcp,  	#Webserver&lt;br /&gt;
+6498/tcp,   #ssh&lt;br /&gt;
+65542/tcp,  #Webserver2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;&lt;ins&gt;&lt;/ins&gt;&lt;/h3&gt;</content><author><name>{&quot;social&quot;=&gt;{&quot;github&quot;=&gt;&quot;zebra777&quot;}}</name></author><category term="writeup" /><category term="thm" /><summary type="html"></summary></entry></feed>

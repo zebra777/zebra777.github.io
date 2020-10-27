@@ -24,7 +24,7 @@ title: Zebra Blog
 description: >- # this means to ignore newlines until "baseurl:"
   'This is a Blog about #CTFs, #WriteUps, #Pen-Testing and #Programming.'
 baseurl: #"https://zebra777.github.io" # the subpath of your site, e.g. /blog
-url: "https://zebra777.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://zebra777.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  zebra777
 

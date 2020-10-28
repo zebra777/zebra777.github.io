@@ -24,6 +24,11 @@
   path: tabs
   url: resources
 -
+  name: Cheat Sheet
+  icon: "fas fa-stream"
+  path: tabs
+  url: cheatsheet
+-
   name: Following Blogs
   icon: "fas fa-stream"
   path: tabs

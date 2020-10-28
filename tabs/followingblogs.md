@@ -11,9 +11,13 @@ type: page
 
 <ins>Here are the links to look up another writeups:</ins>
 
-  * **[Freakazold-blog][fr3akazo1d]**  
-  * **[Marnick Vandecauter][marnick39]**  
-  * **[Marcorei7][marcorei7]**   
+  * **[Freakazold-blog][fr3akazo1d]**    
+  <script src="https://tryhackme.com/badge/36293"></script>  
+    
+  * **[Marnick Vandecauter][marnick39]**      
+  <script src="https://tryhackme.com/badge/170262"></script>  
+    
+  * **[Marcorei7][marcorei7]**     
 
 
 [fr3akazo1d]:    https://fr3akazo1d.github.io/

@@ -17,9 +17,10 @@ type: page
   * **[Marnick Vandecauter][marnick39]**      
   <script src="https://tryhackme.com/badge/170262"></script>  
     
-  * **[Marcorei7][marcorei7]**     
+  * **[Marcorei7][marcorei7]**  
+  <script src="https://tryhackme.com/badge/80979"></script>
 
 
 [fr3akazo1d]:    https://fr3akazo1d.github.io/
 [marnick39]:     https://marnick39.gitlab.io/pages/
-[marcorei7]:      https://marcorei7.wordpress.com/
+[marcorei7]:     https://marcorei7.wordpress.com/

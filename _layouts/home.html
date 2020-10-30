@@ -6,7 +6,18 @@ layout: page
 # © 2017-2019 Cotes Chung
 # MIT Licensed
 ---
-
+<center>
+  <h2 style='color:var(--text-color)'> 
+    Welcome to my Blog.<br> 
+    The most of my content will be writeups of CTF challenges.
+  </h2>
+  <hr>
+  <u>Ethics:</u>
+  <h6 style='color:rgb(72, 192, 72)'>
+    <span class="typewrite" data-period="2000" data-type='["Access to computers - and anything which might teach you something about the way the world really works - should be unlimited and total. Always yield to the Hands-On Imperative!", "All information should be free", "Mistrust authority - promote decentralization.", "Hackers should be judged by their acting, not bogus criteria such as degrees, age, race, or position.", "You can create art and beauty on a computer.", "Computers can change your life for the better.", "Dont litter other peoples data.", "Make public data available, protect private data."]'></span>
+  </h6>
+<hr>
+</center>
 
 {% assign pinned = site.posts | where_exp: "item", "item.pin == true"  %}
 {% assign default = site.posts | where_exp: "item", "item.pin != true"  %}
@@ -85,3 +96,5 @@ layout: page
 {% if paginator.total_pages > 0 %}
   {% include post-paginator.html %}
 {% endif %}
+
+<script src="{{ site.baseurl }}/assets/js/typewriter.js"></script>

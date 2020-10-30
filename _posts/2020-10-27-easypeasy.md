@@ -3,7 +3,7 @@ layout: post
 title:  "EasyPeasy on Tryhackme"
 date:   2020-10-27 10:22:00 +0200
 description: "Walkthrough of Easypeasy on TryHackme"
-tags: TryHackeMe, cyberchef, nmap, gobuster, cronjob
+tags: TryHackeMe , cyberchef , nmap , gobuster , cronjob
 permalink: "/categories/:categories"
 author: Zebra
 image: /assets/img/thm-images/easypeasy.png

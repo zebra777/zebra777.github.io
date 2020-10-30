@@ -84,10 +84,10 @@ create_category() {
 create_tag() {
   if [[ -n $1 ]]; then
     local _name=$1
-    local _filepath="tags/$(echo "$_name" | sed "s/ /-/g;s/'//g" | awk '{print tolower($0)}').html"
+local _filepath="tags/$(echo "$_name" | sed "s/ /-/g;s/'//g" | awk '{print tolower($0)}').html"
 
     if [[ ! -f $_filepath ]]; then
-
+    
       echo "---" > "$_filepath"
       echo "layout: tag" >> "$_filepath"
       echo "title: $_name" >> "$_filepath"

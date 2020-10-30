@@ -51,7 +51,7 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 baseurl: ''
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Europe/Vienna
+timezone: Europe/Berlin
 
 google_analytics:
   id: ''          # Fill with your Google Analytics ID
@@ -136,7 +136,7 @@ defaults:
           url: /
         -
           label: Tags
-          url: /tabs/tags/
+          url: /tabs/tag123/
   -
     scope:
       path: categories
@@ -191,7 +191,7 @@ sitemap_exclude:  # Sitemap will exclude the following items.
     - /norobots/
     - /tabs/
     - /categories/
-    - /tags/
+    - /tag123/
     - /posts/
     - 404.html
     - feed.xml

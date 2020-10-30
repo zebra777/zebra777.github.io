@@ -1,29 +1,23 @@
 ---
+layout: page
 title: Tags
-type: tags
-# All the Tags of posts.
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT License
 ---
 
-{% comment %}
-  'site.tags' looks like a Map, e.g. site.tags.MyTag.[ Post0, Post1, ... ]
-  Print the {{ site.tags }} will help you to understand it.
-{% endcomment %}
-<div id="tags" class="d-flex flex-wrap ml-xl-2 mr-xl-2">
-{% assign tags = "" | split: "" %}
-{% for t in site.tags %}
-  {% assign tags = tags | push: t[0] %}
-{% endfor %}
 
-{% assign sorted_tags = tags | sort_natural %}
+<div id="archives">
+{% for tag in site.tags %}
+  <div class="archive-group">
+    {% capture tag_name %}{{ tag | first }}{% endcapture %}
+    <div  id="#{{ tag_name | slugize }}"></div>
+    <p></p>
 
-{% for t in sorted_tags %}
-  <div>
-    <a class="tag" href="{{ site.baseurl }}/tabs/tags/{{ t | replace: ' ', '-' | downcase | url_encode }}/">{{ t }}<span class="text-muted">{{ site.tags[t].size }}</span></a>
+    <u><h1 class="tag-head">{{ tag_name }}</h1></u>
+    <a name="{{ tag_name | slugize }}"></a>
+    {% for post in site.tags[tag_name] %}
+    <article class="archive-item">
+      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+    </article>
+    {% endfor %}
   </div>
 {% endfor %}
-
 </div>

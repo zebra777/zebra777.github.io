@@ -43,7 +43,7 @@ categories: tryhackme easypeasy
 
 Hello and welcome to the Write-Up of the Room “Easy Peasy” on 
 tryhackme.  
-First i make some directories for better structure.  
+First I make some directories for better structure.  
 Then I check the Task, which I had to solve.  
 We see, that with have a little red line to get the user and root flag.
 Our Steps are:  
@@ -67,7 +67,7 @@ mkdir gobuster  #Gobuster directory
 
 ## <ins>Scanning and Enumeration</ins>
 
-This time i user Rustscan. Rustscan is a bit faster then nmap, cause 
+This time I use Rustscan. Rustscan is a bit faster then nmap, cause 
 first it scans the open ports and do a port list and then it initialize the
 specific scans.
 
@@ -132,7 +132,7 @@ So go to `http://ip/hidden` and check the Page. Put Ctrl+U for Check the Source-
 Page. But nothing interesting there.  
   
 We start another Gobuster scan on   
-`gobuster dir -u http://'machine-ip/hidden -w /usr/share/dirb/wordlists/common.txt`
+`gobuster dir -u http://'machine-ip'/hidden -w /usr/share/dirb/wordlists/common.txt`
     
 → Check! Another directory called **“/whatever”**  
 >  
@@ -161,7 +161,7 @@ Let's download the two pictures:
 One from /hidden and the another from /hidden/whatever
 to check if there any hidden files in the images.  
   
-`wget “and the picture links in the source code`  
+`wget 'picture links in the source code'`  
   
 Check with steghide:  
   
@@ -338,7 +338,7 @@ Last Task 2.8 with root.txt
 ### 
 
 >
-Summery: For the most of the hash cracking operations at tryhackme or hackthebox
+Summary: For the most of the hash cracking operations at tryhackme or hackthebox
 I use the cracking pages at the internet. Because other users can crack the password
 before and you saved a lot of time and resources. In any machines you cannot solve
 the cracking operation with a specific password list or brute force over a long time.

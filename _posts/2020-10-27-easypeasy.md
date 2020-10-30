@@ -3,7 +3,7 @@ layout: post
 title:  "EasyPeasy on Tryhackme"
 date:   2020-10-27 10:22:00 +0200
 description: "Walkthrough of Easypeasy on TryHackme"
-tags: TryHackeMe, EasyPeasy, Hacking, cyberchef, nmap, gobuster, cronjob
+tags: TryHackeMe, cyberchef, nmap, gobuster, cronjob
 permalink: "/categories/:categories"
 author: Zebra
 image: /assets/img/thm-images/easypeasy.png
@@ -12,14 +12,13 @@ categories: tryhackme easypeasy
 
 **[THM EasyPeasy Link][Easypeasylink]**
 
-# EasyPeasy WriteUp
-## by Zebra
-
-
-| Room        | Date        | Difficulty | Tags                               | Time |
-| ----------- | ----------- | ---------- | ---------------------------------- | ---- |
-| Easypeasy   | 27.10.2020  | Easy       | Linux ,easypeasy, hashcrack, cron  | 2h   |
-
+# EasyPeasy WriteUp  
+## by Zebra  
+    
+| Room        | Date        | Difficulty | Type         | Tags                               | Time | Own Intention |
+| ----------- | ----------- | ---------- | ------------ | ---------------------------------- | ---- | ------------- |
+| Easypeasy   | 27.10.2020  | Easy       | Challange    | Linux ,easypeasy, hashcrack, cron  | 2h   | Easy          |
+  
 ------------------------ 
   
 ### <ins>Tasks</ins>  

@@ -15,9 +15,9 @@ categories: tryhackme easypeasy
 # EasyPeasy WriteUp  
 ## by Zebra  
     
-| Room        | Date        | Difficulty | Type         | Time | Own Intention | Maschine |
+| Room        | Date        | Difficulty | Type         | Time | Own Intention | Machine  |
 | ----------- | ----------- | ---------- | ------------ | ---- | ------------- | -------- |
-| Easypeasy   | 27.10.2020  | Easy       | Challange    | 2h   | Easy          | Linux    |
+| Easypeasy   | 27.10.2020  | Easy       | Challenge    | 2h   | Easy          | Linux    |
   
 ------------------------ 
   
